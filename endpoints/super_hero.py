@@ -13,11 +13,11 @@ class SuperHero(BaseEndpoint):
     def get_highest_hero_by_gender_and_job(self, gender: str, job_status: bool) -> dict:
         """
         :param gender: 'Male' | 'Female'
-        :param job_status:
+        :param job_status: Отсутствие/наличие работы
         :return: Словарь с самым высоким героем указанного пола и статуса работы
         """
 
         self.get_all_heroes()
-        return max([i for i in self.response_json if
-                    i['appearance']['gender'] == gender and (i['work']['occupation'] != '-') == job_status],
-                   key=lambda x: self._meter_to_cm(x))
+        return max([hero for hero in self.response_json if
+                    hero['appearance']['gender'] == gender and (hero['work']['occupation'] != '-') == job_status],
+                   key=lambda hero: self._meter_to_cm(hero))

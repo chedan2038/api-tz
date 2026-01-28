@@ -12,5 +12,5 @@ def test_highest_hero_by_gender_and_job(gender, job_status):
     s = SuperHero()
 
     result = s.get_highest_hero_by_gender_and_job(gender, job_status)
-    assert result['appearance']['gender'] == gender
-    assert (result['work']['occupation'] != '-') is job_status
+    assert result['appearance']['gender'] == gender, 'Не совпадает пол'
+    assert (result['work']['occupation'] != '-') is job_status, 'Не совпадает работа'

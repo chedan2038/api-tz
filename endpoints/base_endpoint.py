@@ -7,7 +7,7 @@ class BaseEndpoint:
     @staticmethod
     def _meter_to_cm(hero: dict) -> float:
         """
-        :param hero:
+        :param hero: Герой
         :return: Число сантиметров
         """
 
