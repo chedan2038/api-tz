@@ -1,6 +1,6 @@
 import requests
 
-from cfg import BASE_LINK
+from cfg import BASE_LINK, JOB_MISSING
 from endpoints.base_endpoint import BaseEndpoint
 
 
@@ -19,5 +19,6 @@ class SuperHero(BaseEndpoint):
 
         self.get_all_heroes()
         return max([hero for hero in self.response_json if
-                    hero['appearance']['gender'] == gender and (hero['work']['occupation'] != '-') == job_status],
+                    hero['appearance']['gender'] == gender and (
+                            hero['work']['occupation'] != JOB_MISSING) == job_status],
                    key=lambda hero: self._meter_to_cm(hero))

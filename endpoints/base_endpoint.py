@@ -1,3 +1,6 @@
+from cfg import HERO_METERS, CM_IN_METER
+
+
 class BaseEndpoint:
 
     def __init__(self):
@@ -12,5 +15,5 @@ class BaseEndpoint:
         """
 
         height = hero['appearance']['height'][1].split(' ')
-        unit = 1000 if height[1] == 'meters' else 1
+        unit = CM_IN_METER if height[1] == HERO_METERS else 1
         return unit * float(height[0])
