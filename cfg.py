@@ -7,6 +7,7 @@ CM_IN_METER = 100
 class HeroKeys:
     APPEARANCE = 'appearance'
     GENDER = 'gender'
+    HEIGHT = 'height'
     WORK = 'work'
     OCCUPATION = 'occupation'
 
