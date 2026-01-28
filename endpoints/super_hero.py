@@ -21,4 +21,4 @@ class SuperHero(BaseEndpoint):
         return max([hero for hero in self.response_json if
                     hero[HeroKeys.APPEARANCE][HeroKeys.GENDER] == gender and (
                             hero[HeroKeys.WORK][HeroKeys.OCCUPATION] != HeroValues.JOB_MISSING) == job_status],
-                   key=lambda hero: self._meter_to_cm(hero))
+                   key=self._meter_to_cm)
